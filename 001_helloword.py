@@ -7,7 +7,7 @@
 #
 #        Version:  1.0
 #        Created:  2018-05-30 11:45:06
-#  Last Modified:  2018-05-30 13:38:11
+#  Last Modified:  2018-05-30 14:01:26
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -26,6 +26,7 @@ screen = pygame.display.set_mode((640, 480), 0, 32)
 pygame.display.set_caption('hello world')
 
 background = pygame.image.load(background_image_filename)
+background = pygame.transform.smoothscale(background, (640, 480))
 mouse_cursor = pygame.image.load(mouse_image_filename)
 
 while True:
