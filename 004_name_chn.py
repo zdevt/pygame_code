@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2018-05-31 11:36:27
-#  Last Modified:  2018-05-31 13:26:37
+#  Last Modified:  2018-05-31 13:38:32
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -15,11 +15,17 @@
 
 import pygame
 from pygame.locals import *
-from sys import *
+from sys import exit
 
 pygame.init()
 screen = pygame.display.set_mode((640, 480), 0, 32)
-font = pygame.font.Font("UbuntuMono-R.ttf", 40)
+try:
+    font = pygame.font.Font("UbuntuMono-R.ttf", 40)
+except pygame.error, e:
+    print("can'e load fonts ")
+    print(e)
+    exit()
+
 text_surface = font.render(u"你好", True, (0, 0, 255))
 x = 0
 y = (480 - text_surface.get_height()) / 2
