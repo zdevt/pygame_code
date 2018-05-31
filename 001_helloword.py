@@ -7,7 +7,7 @@
 #
 #        Version:  1.0
 #        Created:  2018-05-30 11:45:06
-#  Last Modified:  2018-05-30 14:01:26
+#  Last Modified:  2018-05-31 09:25:14
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -21,12 +21,14 @@ from sys import exit
 background_image_filename = './lena.jpg'
 mouse_image_filename = './HappyFish.jpg'
 
+display_res = (640, 480)
+
 pygame.init()
-screen = pygame.display.set_mode((640, 480), 0, 32)
+screen = pygame.display.set_mode(display_res, 0, 32)
 pygame.display.set_caption('hello world')
 
 background = pygame.image.load(background_image_filename)
-background = pygame.transform.smoothscale(background, (640, 480))
+background = pygame.transform.smoothscale(background, display_res)
 mouse_cursor = pygame.image.load(mouse_image_filename)
 
 while True:
@@ -40,4 +42,3 @@ while True:
 
     screen.blit(mouse_cursor, (x, y))
     pygame.display.update()
-
